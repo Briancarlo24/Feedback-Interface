@@ -52,22 +52,50 @@ body {
   grid-template-rows: max-content max-content 1fr max-content;
 }
 
+/* 900px */
+@media only screen and (max-width: 56.25em) {
+  .main {
+    margin: 10% auto;
+    height: auto;
+  }
+  .main__container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, max-content);
+    row-gap: 2rem;
+  }
+}
+
 .btn__close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  padding: 1rem;
-  height: 5rem;
-  width: 5rem;
-  border: 1px solid hsla(217, 31%, 22%, 0.3);
+  top: 3.2rem;
+  right: 2.9rem;
+  height: 3.3rem;
+  width: 3.3rem;
+  border: 1px solid #d6deeb;
   border-radius: 100%;
+  cursor: pointer;
+}
+
+.btn__close:hover {
+  background-color: #d6deeb1a;
+}
+
+.btn__close span {
+  display: inline-block;
+  height: 0.2rem;
+  width: 1.2rem;
+  background-color: #d6deeb;
 }
 
 .line-top {
-  height: 1rem;
-  width: 5rem;
-  background-color: red;
-  color: red;
+  margin-left: 50%;
+  margin-top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.line-bottom {
+  margin-left: 50%;
+  margin-bottom: 50%;
+  transform: translate(-50%, -350%) rotate(-45deg);
 }
 
 .question__lbl {
@@ -94,10 +122,9 @@ body {
   justify-content: space-evenly;
 
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, max-content);
   grid-template-rows: min-content min-content;
   justify-items: center;
-  align-content: space-between;
 }
 
 .img__container img {
@@ -191,4 +218,50 @@ img:hover {
 .status__btn:hover {
   background-color: #0396e5d5;
   transform: scale(1.03);
+}
+
+/* 900px */
+@media only screen and (max-width: 56.25em) {
+  .question__lbl {
+    grid-column: 1 / span 1;
+  }
+
+  .main__title {
+    grid-column: 1/ 2;
+  }
+
+  .img__container {
+    grid-row: 3 / span 1;
+    grid-column: 1 / span 1;
+    margin-block: 2rem;
+    justify-content: space-between;
+  }
+}
+
+/* 600px */
+@media only screen and (max-width: 37.5em) {
+  .main__container {
+    padding: 3rem;
+  }
+
+  .img__container {
+    margin-block: 1.5rem;
+  }
+  .img__container img {
+    margin-bottom: 1.5rem;
+  }
+
+  .status__bar {
+    width: 89%;
+  }
+
+  .status__container {
+    grid-column: 1 / -1;
+    grid-row: 4 / span 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    row-gap: 3rem;
+    align-items: center;
+  }
 }
